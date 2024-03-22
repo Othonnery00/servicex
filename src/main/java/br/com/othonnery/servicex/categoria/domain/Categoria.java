@@ -2,24 +2,31 @@ package br.com.othonnery.servicex.categoria.domain;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Data
 @Entity
-@Table
+@Table(
+        name = "CATEGORIA"
+)
+@Data
+@EqualsAndHashCode(
+        onlyExplicitlyIncluded = true
+)
+@NoArgsConstructor
 public class Categoria {
+
+    @EqualsAndHashCode.Include
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_categoria")
-    private Integer IdCategoria;
+    @Column(name = "ID_CATEGORIA")
+    private Integer idCategoria;
 
     @Column(name = "NOME_CATEGORIA")
     private String nomeCategoria;
 
-    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL);
-    private List<Service> serviços;
-
-    public Categoria(Integer)
-
+    @OneToMany(mappedBy = "categorias", cascade = CascadeType.ALL)
+    private List<Service> servicos;
 }
