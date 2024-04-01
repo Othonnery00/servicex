@@ -21,8 +21,10 @@ public class CategoriaResource {
         Categoria categoriaCriada = categoriaService.criarCategoria(novaCategoria);
         return new ResponseEntity<>(categoriaCriada, HttpStatus.CREATED);
     }
+
+    @GetMapping
     public ResponseEntity<List<Categoria>> listarCategorias() {
-        List<Categoria> categorias = categoriaService.ListarCategorias();
+        List<Categoria> categorias = categoriaService.listarCategoria();
         return ResponseEntity.ok(categorias);
     }
 
@@ -47,6 +49,5 @@ public class CategoriaResource {
         categoria.setIdCategoria(idCategoria);
         Categoria novaCategoria = categoriaService.atualizarCategoria(categoria);
         return new ResponseEntity<>(novaCategoria, HttpStatus.OK);
-}
-
+ }
 }

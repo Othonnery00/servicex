@@ -15,9 +15,6 @@ public class CategoriaService {
     public Categoria criarCategoria(Categoria categoria){
         return categoriaRepository.save(categoria);
     }
-    public List<Categoria> ListarCategorias(){
-        return  categoriaRepository.findAll();
-    }
 
     public Optional<Categoria> buscarCategoria(Integer idCategoria){
         return categoriaRepository.findById(idCategoria);
@@ -28,6 +25,14 @@ public class CategoriaService {
     }
     public  void deletarCategoria(Integer idCategoria){
         categoriaRepository.deleteById(idCategoria);
+    }
+
+    public Categoria cadastrarCategoria(Categoria categoria) {
+        return categoriaRepository.save(categoria);
+    }
+
+    public List<Categoria> listarCategoria() {
+        return categoriaRepository.findAll();
     }
 }
 

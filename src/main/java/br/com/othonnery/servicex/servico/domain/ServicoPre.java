@@ -1,21 +1,21 @@
 package br.com.othonnery.servicex.servico.domain;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.Data;
-import lombok.Generated;
+import br.com.othonnery.servicex.categoria.domain.Categoria;
+import jakarta.persistence.*;
+import lombok.*;
 
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Data
 @Table(name = "SERVICOS_PRESTADOS")
 public class ServicoPre {
 
     @Id
-    @Generated
-    @Column(name = "ID_ServicoPre")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID_SERVICO_PRE")
     private Integer IdServicoPre;
 
     @Column(name = "NOME_SERVICO_PRE")
@@ -23,5 +23,9 @@ public class ServicoPre {
 
     @Column(name = "VALOR_SERVICE_PRE")
     private Double valorServicoPre;
+
+    @ManyToOne
+    @JoinColumn(name = "categoria")
+    private Categoria categorias;
     
 }

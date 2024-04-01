@@ -1,7 +1,5 @@
 package br.com.othonnery.servicex.servico.resources;
 
-import br.com.othonnery.servicex.categoria.domain.Categoria;
-import br.com.othonnery.servicex.categoria.service.CategoriaService;
 import br.com.othonnery.servicex.servico.domain.ServicoPre;
 import br.com.othonnery.servicex.servico.service.ServicoP_Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +11,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/ServicoP")
+@RequestMapping("/Service")
 
 public class ServicoP_Resource {
         @Autowired

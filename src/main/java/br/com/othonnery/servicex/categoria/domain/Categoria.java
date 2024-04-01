@@ -1,5 +1,6 @@
 package br.com.othonnery.servicex.categoria.domain;
 
+import br.com.othonnery.servicex.servico.domain.ServicoPre;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -28,5 +29,5 @@ public class Categoria {
     private String nomeCategoria;
 
     @OneToMany(mappedBy = "categorias", cascade = CascadeType.ALL)
-    private List<Service> servicos;
+    private List<ServicoPre> servicos;
 }

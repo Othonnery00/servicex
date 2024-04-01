@@ -4,7 +4,6 @@ import br.com.othonnery.servicex.servico.domain.ServicoPre;
 import br.com.othonnery.servicex.servico.repositories.ServicoP_Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
